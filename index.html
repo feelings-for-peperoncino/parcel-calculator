@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parcel Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1 class="p-5">ゆうパック料金計算機</h1>
+  </header>
+  <div class="container">
+    <table class="table">
+      <!-- テーブルのヘッダー部分は省略 -->
+      <tbody>
+        <!-- テーブルの内容部分 -->
+        <script>
+          const postageInfo = [
+            { text: "60サイズ", rate: 800, type: "ゆうパック" },
+            { text: "80サイズ", rate: 1010, type: "ゆうパック" },
+            { text: "100サイズ", rate: 1260, type: "ゆうパック" },
+            { text: "120サイズ", rate: 1500, type: "ゆうパック" },
+            { text: "140サイズ", rate: 1750, type: "ゆうパック" },
+            { text: "160サイズ", rate: 1970, type: "ゆうパック" },
+            { text: "170サイズ", rate: 2300, type: "ゆうパック" }
+          ];
+        
+          postageInfo.forEach((info, index) => {
+            const typeClass = info.type === "はがき" ? "white-background" : (info.type === "定型" ? "standard" : "non-standard"); // タイプによりクラスを選択
+            document.write(`
+              <tr>
+                <td class="${typeClass}">${info.text}</td>
+                <td class="price" data-value="${info.rate}">${info.rate}円</td>
+                <td class="quantity">
+                  <input type="number" min="0" value="0" class="quantity-input" data-index="${index}" inputmode="numeric">
+                </td>
+                <td class="total">0円</td>
+              </tr>
+            `);
+          });
+        </script>
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <label for="discountInput">割引率（0〜99）:</label>
+    <input type="number" id="discountInput" min="0" max="99">
+    <button id="calculateButton">計算</button>
+  </div>
+  
+  <div class="container fixed-footer-placeholder">
+    <div class="row fixed-footer bg-light">
+      <div class="col">
+        <h2>合計通数</h2>
+        <h2 class="total-quantity">0</h2>
+      </div>
+      <div class="col">
+        <h2>合計金額</h2>
+        <h2 class="grand-total">0円</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- 外部スクリプトを読み込む -->
+  <script src="js/script.js"></script>
+  <script>
+
+  </script>
+</body>
+
+</html>
