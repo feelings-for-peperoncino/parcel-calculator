@@ -22,13 +22,13 @@
         <!-- テーブルの内容部分 -->
         <script>
           const postageInfo = [
-            { text: "60サイズ", rate: 800, type: "ゆうパック" },
-            { text: "80サイズ", rate: 1010, type: "ゆうパック" },
-            { text: "100サイズ", rate: 1260, type: "ゆうパック" },
-            { text: "120サイズ", rate: 1500, type: "ゆうパック" },
-            { text: "140サイズ", rate: 1750, type: "ゆうパック" },
-            { text: "160サイズ", rate: 1970, type: "ゆうパック" },
-            { text: "170サイズ", rate: 2300, type: "ゆうパック" }
+            { text: "60サイズ", rate: 820, type: "ゆうパック" },
+            { text: "80サイズ", rate: 1130, type: "ゆうパック" },
+            { text: "100サイズ", rate: 1450, type: "ゆうパック" },
+            { text: "120サイズ", rate: 1770, type: "ゆうパック" },
+            { text: "140サイズ", rate: 2120, type: "ゆうパック" },
+            { text: "160サイズ", rate: 2450, type: "ゆうパック" },
+            { text: "170サイズ", rate: 3000, type: "ゆうパック" }
           ];
         
           postageInfo.forEach((info, index) => {
@@ -51,7 +51,6 @@
   <div class="container">
     <label for="discountInput">割引率（0〜99）:</label>
     <input type="number" id="discountInput" min="0" max="99">
-    <button id="calculateButton">計算</button>
   </div>
   
   <div class="container fixed-footer-placeholder">
